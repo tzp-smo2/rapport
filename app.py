@@ -54,14 +54,15 @@ if xlsx_file and txt_file:
             import io
 
             # Lecture et affichage de l’image de manière sûre
-            try:
-                with open(graph_path, "rb") as f:
-                img_bytes = f.read()
-                image = Image.open(io.BytesIO(img_bytes))
-                st.image(image, use_column_width=True)
-            except Exception as e:
-                st.warning("Le graphique n'a pas pu être affiché. Mais il est bien dans le PDF.")
-                st.text(f"Erreur : {e}")
+try:
+    with open(graph_path, "rb") as f:
+        img_bytes = f.read()
+    image = Image.open(io.BytesIO(img_bytes))
+    st.image(image, use_container_width=True)
+except Exception as e:
+    st.warning("Le graphique n'a pas pu être affiché. Mais il est bien dans le PDF.")
+    st.text(f"Erreur : {e}")
+
 
 
             # Téléchargement du PDF
