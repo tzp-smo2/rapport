@@ -1,1 +1,0 @@
-# Script générateur à compléter
