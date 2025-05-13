@@ -12,6 +12,7 @@ from reportlab.lib.pagesizes import A4
 from reportlab.lib.units import cm
 from reportlab.platypus import Table, TableStyle, Frame
 from reportlab.lib import colors
+import matplotlib.lines as mlines
 
 def generer_rapport(xlsx_file, txt_file, logo_path="logo_tzp.png", dossier_sortie="."):
 
@@ -122,14 +123,20 @@ def generer_rapport(xlsx_file, txt_file, logo_path="logo_tzp.png", dossier_sorti
     # === GRAPHIQUE
     graph_path = os.path.join(dossier_sortie, f"graph_{prenom}_{nom}.png")
     plt.figure(figsize=(10/2.54, 6/2.54))
-    plt.scatter(x, y, label="Données SmO2", alpha=0.6)
-    plt.plot(x, piecewise_linear(x, *params1), 'r', label="Seuil 1")
+    plt.scatter(x, y, alpha=0.6, color='blue')
+    plt.plot(x, piecewise_linear(x, *params1), color='red')
     plt.axvline(x=x0, color='green', linestyle='--')
     plt.axvline(x=x0_2, color='blue', linestyle='--')
+
+    scatter_legend = mlines.Line2D([], [], color='blue', marker='o', linestyle='None', label='Données SmO₂')
+    fit_legend = mlines.Line2D([], [], color='red', label='Modèle ajusté')
+    seuil1_legend = mlines.Line2D([], [], color='green', linestyle='--', label='Seuil 1')
+    seuil2_legend = mlines.Line2D([], [], color='blue', linestyle='--', label='Seuil 2')
+
     plt.xlabel("Puissance (W)", fontsize=8)
-    plt.ylabel("SmO2 (%)", fontsize=8)
-    plt.title("SmO2 vs Puissance - Seuils détectés", fontsize=9)
-    plt.legend(fontsize=7)
+    plt.ylabel("SmO₂ (%)", fontsize=8)
+    plt.title("SmO₂ vs Puissance - Seuils détectés", fontsize=9)
+    plt.legend(handles=[scatter_legend, fit_legend, seuil1_legend, seuil2_legend], fontsize=7)
     plt.tight_layout()
     plt.savefig(graph_path, dpi=300)
     plt.close()
