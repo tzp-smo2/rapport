@@ -120,19 +120,26 @@ def generer_rapport(xlsx_file, txt_file, logo_path="logo_tzp.png", dossier_sorti
     ]))
 
     # === GRAPHIQUE
-    graph_path = os.path.join(dossier_sortie, f"graph_{prenom}_{nom}.png")
-    plt.figure(figsize=(10/2.54, 6/2.54))
-    plt.scatter(x, y, label="Données SmO2", alpha=0.6)
-    plt.plot(x, piecewise_linear(x, *params1), 'r', label="Seuil 1")
-    plt.axvline(x=x0, color='green', linestyle='--')
-    plt.axvline(x=x0_2, color='blue', linestyle='--')
-    plt.xlabel("Puissance (W)", fontsize=8)
-    plt.ylabel("SmO2 (%)", fontsize=8)
-    plt.title("SmO2 vs Puissance - Seuils détectés", fontsize=9)
-    plt.legend(fontsize=7)
-    plt.tight_layout()
-    plt.savefig(graph_path, dpi=300)
-    plt.close()
+        graph_path = os.path.join(dossier_sortie, f"graph_{prenom}_{nom}.png")
+
+        plt.figure(figsize=(10/2.54, 6/2.54))  # taille en cm
+        plt.scatter(x, y, label="Données SmO₂", alpha=0.6)
+
+        # Courbe modélisée seuil 1
+        plt.plot(x, piecewise_linear(x, *params1), 'r', label="Modèle Seuil 1")
+
+        # Seuils verticaux avec légendes
+        plt.axvline(x=x0, color='green', linestyle='--', label=f"Seuil 1 : {x0:.1f} W")
+        plt.axvline(x=x0_2, color='blue', linestyle='--', label=f"Seuil 2 : {x0_2:.1f} W")
+
+        plt.xlabel("Puissance (W)", fontsize=8)
+        plt.ylabel("SmO₂ (%)", fontsize=8)
+        plt.title("SmO₂ vs Puissance - Seuils détectés", fontsize=9)
+        plt.legend(fontsize=7)
+        plt.tight_layout()
+        plt.savefig(graph_path, dpi=300)
+        plt.close()
+   
 
     # === PDF
     if not os.path.exists(dossier_sortie):
