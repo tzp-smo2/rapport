@@ -50,8 +50,19 @@ if xlsx_file and txt_file:
             st.success("✅ Rapport généré avec succès !")
 
             # Affichage graphique SmO2
-            st.subheader("📉 Graphique SmO₂ détecté")
-            st.image(Image.open(graph_path), use_column_width=True)
+            from PIL import Image
+            import io
+
+            # Lecture et affichage de l’image de manière sûre
+            try:
+                with open(graph_path, "rb") as f:
+                img_bytes = f.read()
+                image = Image.open(io.BytesIO(img_bytes))
+                st.image(image, use_column_width=True)
+            except Exception as e:
+                st.warning("Le graphique n'a pas pu être affiché. Mais il est bien dans le PDF.")
+                st.text(f"Erreur : {e}")
+
 
             # Téléchargement du PDF
             with open(pdf_path, "rb") as f:
