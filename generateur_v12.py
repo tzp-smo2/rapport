@@ -72,8 +72,8 @@ def generer_rapport(xlsx_file, txt_file, logo_path="logo_tzp.png", dossier_sorti
     hr_seuil1 = int(f_hr(x0))
     hr_seuil2 = int(f_hr(x0_2))
 
-    # === PMA (moyenne max glissante sur 6 valeurs)
-    window = 6
+    # === PMA (moyenne max glissante sur 3 valeurs)
+    window = 3
     max_avg = 0
     best_idx = 0
     for i in range(len(x) - window + 1):
