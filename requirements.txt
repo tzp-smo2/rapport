@@ -5,3 +5,4 @@ scipy
 reportlab
 openpyxl
 streamlit
+ruptures
