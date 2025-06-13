@@ -6,3 +6,4 @@ reportlab
 openpyxl
 streamlit
 ruptures
+pdfkit
