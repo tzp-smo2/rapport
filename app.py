@@ -3,7 +3,7 @@ import tempfile
 import os
 import io
 from PIL import Image
-from generateur_v12 import generer_rapport
+from generateur_v15 import generer_rapport
 
 st.set_page_config(page_title="Rapport SmO2", layout="centered")
 
