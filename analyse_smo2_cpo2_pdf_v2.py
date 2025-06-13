@@ -11,7 +11,7 @@ from reportlab.lib.utils import ImageReader
 from reportlab.lib import colors
 
 st.set_page_config(layout="wide")
-st.title("🧪 Analyse SmO₂ & Rapport PDF – CPO2 (v2 structurée)")
+st.title("🧪 Analyse SmO₂ & Rapport PDF – CPO2")
 
 txt_file = st.file_uploader("📄 Importer le fichier .txt du sportif", type=["txt"])
 identity = {}
