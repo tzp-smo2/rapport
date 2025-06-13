@@ -7,3 +7,4 @@ openpyxl
 streamlit
 ruptures
 pdfkit
+weasyprint
