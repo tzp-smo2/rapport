@@ -62,6 +62,7 @@ if txt_file and excel_file:
         {"zone": "Z1", "puissance": f"< {s1_vals['power']} W", "wkg": f"< {s1_vals['wkg']}", "description": "Endurance"},
         {"zone": "Z2", "puissance": f"{s1_vals['power']}–{s2_vals['power']} W", "wkg": f"{s1_vals['wkg']}–{s2_vals['wkg']}", "description": "Tempo"},
         {"zone": "Z3", "puissance": f"> {s2_vals['power']} W", "wkg": f"> {s2_vals['wkg']}", "description": "PMA / I3"},
+        {"zone": "Z4", "puissance": f"> {pma_vals['power']} W", "wkg": f"> {pma_vals['wkg']}", "description": "Au-dessus PMA"},
     ]
 
     # Détermination des niveaux horizontaux de SmO2 pour les zones
