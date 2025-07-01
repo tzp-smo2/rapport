@@ -28,7 +28,7 @@ def generate_pdf(output_path, identity, seuils, zones, remarques, graph_path, lo
                                        alignment=TA_CENTER, fontSize=14, leading=18, textColor=colors.black)
 
     # Titre + logo
-    titre = Paragraph("<b>Rapport de Test SmO2 – CPO2</b>", styleH)
+    titre = Paragraph("<b>Rapport de Test SmO2</b>", styleH)
     if logo_path and os.path.exists(logo_path):
         logo_img = ImageReader(logo_path)
         iw, ih = logo_img.getSize()
