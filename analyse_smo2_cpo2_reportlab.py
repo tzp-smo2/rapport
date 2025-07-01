@@ -26,7 +26,7 @@ def generate_pdf(output_path, identity, seuils, zones, remarques, graph_path, lo
     styleH2 = ParagraphStyle(name='Heading2', parent=styles['Heading2'], fontName='DejaVu', fontSize=12)
 
     # Titre et logo dans un tableau 1/3 - 2/3, logo aligné à droite
-    titre = Paragraph("<b>Rapport de Test SmO2 – CPO2</b>", styleH)
+    titre = Paragraph("<b>Rapport de Test SmO2</b>", styleH)
     if logo_path and os.path.exists(logo_path):
         logo_img = ImageReader(logo_path)
         iw, ih = logo_img.getSize()
