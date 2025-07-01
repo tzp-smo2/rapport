@@ -12,7 +12,7 @@ import os
 from analyse_smo2_cpo2_reportlab import generate_pdf
 
 st.set_page_config(layout="wide")
-st.title("🧪 Rapport CPO2 – SmO₂ avec zones colorées horizontales")
+st.title("🧪 Rapport CPO2 via SmO₂")
 
 txt_file = st.file_uploader("📄 Charger le fichier .txt", type=["txt"])
 excel_file = st.file_uploader("📊 Charger le fichier Excel (.xlsx)", type=["xlsx"])
