@@ -59,10 +59,10 @@ if txt_file and excel_file:
 
     seuils = {"S1": s1_vals, "S2": s2_vals, "PMA": pma_vals}
     zones = [
-        {"zone": "Z1", "puissance": f"< {s1_vals['power']} W", "wkg": f"< {s1_vals['wkg']}", "description": "Endurance"},
-        {"zone": "Z2", "puissance": f"{s1_vals['power']}–{s2_vals['power']} W", "wkg": f"{s1_vals['wkg']}–{s2_vals['wkg']}", "description": "Tempo"},
-        {"zone": "Z3", "puissance": f"> {s2_vals['power']} W", "wkg": f"> {s2_vals['wkg']}", "description": "PMA / I3"},
-        {"zone": "Z4", "puissance": f"> {pma_vals['power']} W", "wkg": f"> {pma_vals['wkg']}", "description": "Au-dessus PMA"},
+        {"zone": "Z1", "puissance": f"< {s1_vals['power']} W", "wkg": f"< {s1_vals['wkg']}", "description": "Zone modérée"},
+        {"zone": "Z2", "puissance": f"{s1_vals['power']}–{s2_vals['power']} W", "wkg": f"{s1_vals['wkg']}–{s2_vals['wkg']}", "description": "Zone soutenue"},
+        {"zone": "Z3", "puissance": f"> {s2_vals['power']} W", "wkg": f"> {s2_vals['wkg']}", "description": "Zone sévère"},
+        {"zone": "Z4", "puissance": f"> {pma_vals['power']} W", "wkg": f"> {pma_vals['wkg']}", "description": "Zone maximale"},
     ]
 
     # Détermination des niveaux horizontaux de SmO2 pour les zones
