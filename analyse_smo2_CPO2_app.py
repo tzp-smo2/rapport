@@ -89,9 +89,9 @@ if txt_file and excel_file:
     ax.grid(True)
 
     legend_elements = [
-        Patch(facecolor='green', alpha=0.1, label='Z1 : Endurance'),
-        Patch(facecolor='orange', alpha=0.1, label='Z2 : Tempo'),
-        Patch(facecolor='red', alpha=0.1, label='Z3 : Haute intensité'),
+        Patch(facecolor='green', alpha=0.1, label='Z1 : Modérée'),
+        Patch(facecolor='orange', alpha=0.1, label='Z2 : Soutenue'),
+        Patch(facecolor='red', alpha=0.1, label='Z3 : Sévère'),
         Patch(facecolor='skyblue', alpha=0.1, label='Réoxygénation'),
     ]
     ax.legend(handles=ax.get_legend_handles_labels()[0] + legend_elements)
