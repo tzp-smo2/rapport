@@ -8,3 +8,4 @@ streamlit
 ruptures
 pdfkit
 weasyprint
+fitparse
